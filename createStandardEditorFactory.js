@@ -25,6 +25,7 @@ define([
 "./primitive/MappedContentPaneFactory",//
 "./primitive/TextareaAttributeFactory",//
 "./primitive/SimpleTextareaAttributeFactory",//
+"./primitive/MarkupAttributeFactory",//
 "./group/AttributeListWidget",//
 "./group/ColumnsGroupFactory",//
 "./list_embedded/RepeatedEmbeddedAttributeFactory",//
@@ -39,6 +40,7 @@ define([
 		CheckedMultiSelectAttributeFactory, MappedSelectAttributeFactory, DateAttributeFactory, 
 		TimeAttributeFactory, EmbeddedAttributeFactory, NumberAttributeFactory, 
 		CurrencyAmountAttributeFactory, MappedContentPaneFactory, TextareaAttributeFactory, SimpleTextareaAttributeFactory,
+		MarkupAttributeFactory,
 		AttributeListWidget, ColumnsGroupFactory, RepeatedEmbeddedAttributeFactory, PrimitiveMapAttributeFactory, MapEmbeddedAttributeFactory, TableListAttributeFactory) {
 // module:
 //		gform/createStandardEditorFactory
@@ -82,6 +84,7 @@ define([
 			attributeFactoryFinder.addAttributeFactory("checked_select",new CheckedSelectAttributeFactory({editorFactory:editorFactory}));
 			attributeFactoryFinder.addAttributeFactory("textarea", new TextareaAttributeFactory({editorFactory:editorFactory}));
 			attributeFactoryFinder.addAttributeFactory("simpletextarea", new SimpleTextareaAttributeFactory({editorFactory:editorFactory}));
+			attributeFactoryFinder.addAttributeFactory("markup", new MarkupAttributeFactory({editorFactory:editorFactory}));
 			attributeFactoryFinder.set("attributeFactories",attributeFactories);
 
 			editorFactory.set("attributeFactoryFinder",attributeFactoryFinder);

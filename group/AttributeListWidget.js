@@ -15,6 +15,15 @@ define([ "dojo/_base/declare", "dojo/_base/lang", "dojo/_base/array", "dijit/_Wi
 			this.description=this.meta.description||"";
 		},
 		templateString : template,
+		
+		startup:function(){		
+			this.inherited(arguments);
+			array.forEach(this.getChildren(),function(child) {
+				if (child.startup)
+					child.startup();
+			});
+		},
+		
 		destroy: function() {
 			array.forEach(this.getChildren(),function(child) {
 				child.destroy();
